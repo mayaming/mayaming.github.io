@@ -1,4 +1,9 @@
+[TOC]
+
+
+
 ### 一个用户属于哪个组，将用户加到组里，
+
 ```bash
 mayaming@ubuntu:~$ groups mayaming
 mayaming : mayaming adm cdrom sudo dip plugdev lpadmin sambashare docker
@@ -42,9 +47,9 @@ hive-server2   	0:off	1:off	2:on	3:on	4:on	5:on	6:off
 
 ### ps aux输出详解
 `ps aux`
-| USER | PID | %CPU | %MEM | VSZ | RSS | TTY | STAT | START | TIME | COMMAND |
-| :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- |
-| ppipe | 31723 | 0.0 | 0.0 | 17960 | 1528 | ? | S | May20 | 0:03 | rsync -avzL 218.244.142.25::output_25 /datayes/pipeline/newsCrawler/data_25/ |
+| USER | PID | %CPU | %MEM | VSZ | RSS |
+| :- | :- | :- | :- | :- | :- |
+| ppipe | 31723 | 0.0 | 0.0 | 17960 | 1528 |
 stat 中的参数意义如下：
    - D 不可中断 Uninterruptible（usually IO）
    - R 正在运行，或在队列中的进程
