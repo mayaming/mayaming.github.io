@@ -209,3 +209,6 @@ encrypt_s3_logs = False
     log_dir_pat='^[ ]*base_log_folder[ ]*=\(.*\)$' 
     log_dir=${sed -e "/${log_dir_pat}/!d" -e 's//\1/' $airflow_conf}
 ```
+### Linux上状态查看及性能监控命令汇总
+
+![Linux上查询状态/性能监控命令汇总图示](resources/Linux-perf-cmd.png)

@@ -150,11 +150,27 @@
     longTime => eventLoop.post(GenerateJobs(new Time(longTime)))
     ```
 
-    即，定期向JobGenerator的event loop里提交GenerateJobs消息，参数当该timer的时间
+    即，定期向JobGenerator的event loop里提交GenerateJobs消息，参数当该timer的时间。注意一次timer触发会导致提交多个job，每个job对应一个output stream。
 
     详情可见：
 
     ![Streaming作业生成提交流程](resources/spark-Streaming.png)
+
+### Spark中的RPC
+
+在Spark代码中我们经常可能看到如下3个概念：
+
+```scala
+abstract class RpcEnv(conf: SparkConf) 
+abstract class RpcEndpointRef(conf: SparkConf)
+trait RpcEndpoint
+```
+
+这些概念是学自Akka Actor的，类似于Actor System，ActorRef和Actor。
+
+在Akka中，Actor System是整体的入口；Actor是一个个交互实体；但是从一个Actor向另一个Actor发送消息时，并不是直接发送给目标Actor，而是创建一个“代理”，即ActorRef，通过调用带“代理”上的方法，向目标Actor发送数据。通过ActorRef来屏蔽该Actor具体在网络中什么位置。下图可以作为一个参考：
+
+![Actor系统示例](resources/actor-model.png)
 
 ## 一些问题
 
