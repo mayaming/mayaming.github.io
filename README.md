@@ -4,3 +4,4 @@
 - [杂项笔记](杂项笔记.html)
 - [BashCheatSheet](BashCheatSheet.html)
 - [ZooKeeper笔记](ZooKeeper笔记.html)
+- [NoSQL](NoSQL.html)
